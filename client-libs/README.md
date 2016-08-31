@@ -1,5 +1,5 @@
-# Web Services Client Libraries
-----
+Web Services Client Libraries
+====
 In order to generate client libraries for [AppSensor web services REST API](https://github.com/jtmelton/appsensor/tree/master/execution-modes/appsensor-ws-rest-server)  in different languages( Java, Python, C#, Ruby,...) these two files are required :
 
  - **swagger.json** : API specification file ( one file for all languages).
@@ -8,15 +8,19 @@ In order to generate client libraries for [AppSensor web services REST API](http
  **swagger.json** is an API specification file generated out of the web services REST Api using instructions [here]( specfile.md).  After generating the swagger.json file, it should be copied to the desired client library folder, for example "appsensor\client-libs\java".
  
  **pom.xml**  build file is  different for each language. The client library will be generated using the [Swagger Code Genration MVN Plugin](https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen-maven-plugin) which is configured in the pom.xml. 
- ## **Client library generation**
+
+## **Client Library Generation**
 
 The client libraries are placed in "*AppSensor\client-libs". There is a separate folder for each language containing the above files, and a demo folder.
 
 Using the pre-configured swagger.json file, the client libraries are generated to communicate with the AppSensor web services via **localhost:8085** address(whihc is based on the configuration settings of **appsensor\sample-apps\appsensor-ws-rest-server-boot**). This base host and address can be changed at run time using the generated client api (can be found in demo source codes). 
 
-----
- ### Java Library 
+
+## Java Library
+-----------
+ 
  Having two above files(swagger.json, pom.xml) in the "AppSensor\client-libs\Java" directory then run the following command:
+ 
 ```
 mvn install
 ```
@@ -53,7 +57,8 @@ After executing the above command the generated "*target*" folder will contain t
          </executions>
 </plugin>
  ```
- #### Java Demo application
+### Java Demo application
+--------------------------
  The demo folder contains a source file using the generated Java library to communicate with REST API. The demo application contains these functionalities:
 * Gettting Server Configuration
 * Adding a new Event
@@ -64,7 +69,8 @@ After executing the above command the generated "*target*" folder will contain t
  2.  Apache TomCat or any similar jsp application server should be running( stand alone or in an IDE)
  
 ----
- ### Python Library  
+## Python Library  
+------------------
  Having two above files(swagger.json, pom.xml) in the Python directory then run the following command:
 ```
 mvn install
@@ -105,6 +111,7 @@ The above command generates other files:.
             </plugin>
  ```
  ### Python  Demo Application
+ --------------------
  The demo folder contains a source code using the generated Java library to communicate with REST API. The demo application contains these functionalities:
 * Getting the Server Configuration
 * Addng a New Event
